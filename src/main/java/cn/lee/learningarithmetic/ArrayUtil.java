@@ -1,8 +1,10 @@
 package cn.lee.learningarithmetic;
 
-
 import java.util.Random;
 
+/**
+ * @author Lie
+ */
 public final class ArrayUtil {
 
     public static Integer[] integerBuilder(Integer initSize) {
@@ -15,8 +17,8 @@ public final class ArrayUtil {
     }
 
     public static <T> void printArray(T[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i].toString() + "   ");
+        for (T t : arr) {
+            System.out.print(t.toString() + "   ");
         }
         System.out.println();
     }
@@ -27,18 +29,23 @@ public final class ArrayUtil {
         arr[b] = temp;
     }
 
-    public static <T> void check(T[] arr, T[] check) {
-        boolean flag = true;
+    public static <T> boolean check(T[] arr, T[] check) {
         try {
             for (int i = 0; i < arr.length; i++) {
                 if (!arr[i].equals(check[i])) {
-                    flag = false;
+                    return false;
                 }
             }
         } catch (Exception e) {
-            flag = false;
+            return false;
         }
-        System.out.println(flag);
+        return true;
+    }
+
+    public static <T> T[] copyArray(T[] arr) {
+        T[] res = (T[]) new Object[arr.length];
+        System.arraycopy(arr, 0, res, 0, arr.length);
+        return res;
     }
 
 }
