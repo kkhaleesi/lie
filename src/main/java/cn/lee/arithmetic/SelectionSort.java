@@ -11,8 +11,8 @@ public class SelectionSort {
         Integer[] arr1 = Arrays.copyOf(arr, arr.length);
         for (int i = 0; i < arr.length - 1; i++) {
             int temp = i;
-            for (int j = i+1; j < arr.length; j++) {
-                if (arr[temp]>arr[j]){
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[temp] > arr[j]) {
                     temp = j;
                 }
             }
