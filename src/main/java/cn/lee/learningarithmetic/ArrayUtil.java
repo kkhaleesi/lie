@@ -1,4 +1,4 @@
-package cn.lee.arithmetic;
+package cn.lee.learningarithmetic;
 
 
 import java.util.Random;
